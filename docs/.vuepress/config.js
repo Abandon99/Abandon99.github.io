@@ -7,6 +7,10 @@ module.exports = {
   title: '韩筠宜的BLOG',
   theme: 'reco',
   themeConfig: {
+    cyberSecurityRecord: '京ICP备2022003741号-1',
+    cyberSecurityLink: 'https://beian.miit.gov.cn',
+    // 项目开始时间，只填写年份
+    startYear: '2022',
     authorAvatar: '/avatar.jpg',
     type: 'blog',
     blogConfig: {
@@ -38,10 +42,5 @@ module.exports = {
     codeTheme: 'tomorrow',
  },
      // 备案
-  record: 'ICP 备案文案',
-  recordLink: 'ICP 备案指向链接',
-  cyberSecurityRecord: '公安部备案文案',
-  cyberSecurityLink: '公安部备案指向链接',
-  // 项目开始时间，只填写年份
-  startYear: '2017'
+  
 } 
