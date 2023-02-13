@@ -354,13 +354,9 @@
 
     
     
-        <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>501 Words</span>
-        </span>
-    
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>2 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 Mins</span>
         </span>
     
     
@@ -376,26 +372,36 @@
             
 
             <div class="article-content markdown-body">
-                <h2 id="讲人话"><a href="#讲人话" class="headerlink" title="讲人话:"></a>讲人话:</h2><p><strong>「 一个函数 + 这个函数的外部环境   =   闭包 」</strong></p>
-<p>所以，这类看似不负责的说法都是正确的：</p>
-<blockquote>
-<p>一个函数就是一个闭包</p>
-</blockquote>
-<blockquote>
-<p>A clouser is nothing but a function with scope.</p>
-</blockquote>
-<blockquote>
-<p>A Closure is nothing but a function inside a function.</p>
-</blockquote>
-<p>我感觉闭包已经讲完了，但是这样你们肯定想揍我。</p>
-<h2 id="讲专业"><a href="#讲专业" class="headerlink" title="讲专业:"></a>讲专业:</h2><h3 id="先瞅瞅wiki"><a href="#先瞅瞅wiki" class="headerlink" title="先瞅瞅wiki"></a>先瞅瞅wiki</h3><blockquote>
-<p>In programming languages, a closure, also lexical closure or function closure, is a technique for implementing lexically scoped name binding in a language with first-class functions. Operationally, a closure is a record storing a function together with an environment. The environment is a mapping associating each free variable of the function (variables that are used locally, but defined in an enclosing scope) with the value or reference to which the name was bound when the closure was created. Unlike a plain function, a closure allows the function to access those captured variables through the closure’s copies of their values or references, even when the function is invoked outside their scope.</p>
-</blockquote>
-<p>大概意思是：闭包（也称为词汇闭包或函数闭包）是一种在具有一级函数的语言中实现词汇范围名称绑定的技术。从操作上讲，闭包是一个记录，它将一个函数与一个环境一起存储。 环境是一种映射，将函数的每个自由变量（本地使用但在封闭范围内定义的变量）与创建闭包时名称绑定到的值或引用相关联。 与普通函数不同，闭包允许函数通过闭包的值或引用副本访问这些捕获的变量，即使函数在其作用域之外被调用。</p>
-<h3 id="再瞅瞅MDN对JavaScript中闭包的描述"><a href="#再瞅瞅MDN对JavaScript中闭包的描述" class="headerlink" title="再瞅瞅MDN对JavaScript中闭包的描述"></a>再瞅瞅MDN对JavaScript中闭包的描述</h3><blockquote>
-<p>一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。也就是说，闭包让你可以在一个内层函数中访问到其外层函数的作用域。在 JavaScript 中，每当创建一个函数，闭包就会在函数创建的同时被创建出来。</p>
-</blockquote>
-<h3 id="我来总结："><a href="#我来总结：" class="headerlink" title="我来总结："></a>我来总结：</h3><p>我觉得MDN说的好。</p>
+                <!-- 
+## 讲人话:
+
+**「 一个函数 + 这个函数的外部环境   =   闭包 」**
+
+所以，这类看似不负责的说法都是正确的：
+
+> 一个函数就是一个闭包
+
+> A clouser is nothing but a function with scope.
+
+> A Closure is nothing but a function inside a function.
+
+我感觉闭包已经讲完了，但是这样你们肯定想揍我。
+
+## 讲专业:
+
+### 先瞅瞅wiki
+> In programming languages, a closure, also lexical closure or function closure, is a technique for implementing lexically scoped name binding in a language with first-class functions. Operationally, a closure is a record storing a function together with an environment. The environment is a mapping associating each free variable of the function (variables that are used locally, but defined in an enclosing scope) with the value or reference to which the name was bound when the closure was created. Unlike a plain function, a closure allows the function to access those captured variables through the closure's copies of their values or references, even when the function is invoked outside their scope.
+
+大概意思是：闭包（也称为词汇闭包或函数闭包）是一种在具有一级函数的语言中实现词汇范围名称绑定的技术。从操作上讲，闭包是一个记录，它将一个函数与一个环境一起存储。 环境是一种映射，将函数的每个自由变量（本地使用但在封闭范围内定义的变量）与创建闭包时名称绑定到的值或引用相关联。 与普通函数不同，闭包允许函数通过闭包的值或引用副本访问这些捕获的变量，即使函数在其作用域之外被调用。
+
+### 再瞅瞅MDN对JavaScript中闭包的描述
+> 一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。也就是说，闭包让你可以在一个内层函数中访问到其外层函数的作用域。在 JavaScript 中，每当创建一个函数，闭包就会在函数创建的同时被创建出来。
+
+### 我来总结：
+
+我觉得MDN说的好。 -->
+
+
 
             </div>
 
@@ -449,7 +455,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">明明1句话就能理解「闭包」</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B2%E4%BA%BA%E8%AF%9D"><span class="nav-text">讲人话:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B2%E4%B8%93%E4%B8%9A"><span class="nav-text">讲专业:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%88%E7%9E%85%E7%9E%85wiki"><span class="nav-text">先瞅瞅wiki</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%8D%E7%9E%85%E7%9E%85MDN%E5%AF%B9JavaScript%E4%B8%AD%E9%97%AD%E5%8C%85%E7%9A%84%E6%8F%8F%E8%BF%B0"><span class="nav-text">再瞅瞅MDN对JavaScript中闭包的描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E6%9D%A5%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-text">我来总结：</span></a></li></ol></li></ol>
+        
 
     </div>
 </div>

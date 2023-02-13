@@ -3,14 +3,20 @@
   <entry>
     <title>终极二分法</title>
     <url>/2023/02/13/binary/</url>
-    <content><![CDATA[<h2 id="二分法适用："><a href="#二分法适用：" class="headerlink" title="二分法适用："></a>二分法适用：</h2><ul>
-<li>有序数组</li>
-<li>找值</li>
-</ul>
-<p>先看 leetcode 35题：</p>
-<p>给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。</p>
-<p>请必须使用时间复杂度为 O(log n) 的算法。</p>
-<p>示例 1:</p>
+    <content><![CDATA[<!-- 
+## 二分法适用：
+- 有序数组
+- 找值
+
+先看 leetcode 35题：
+
+
+给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+
+请必须使用时间复杂度为 O(log n) 的算法。
+
+示例 1:
+
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入: nums = [1,3,5,6], target = 5</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure></div>
 
 <p>我的新写法</p>
@@ -35,7 +41,20 @@
 <p>实例1</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 5, bad = 4</span><br><span class="line">输出：4</span><br><span class="line">解释：</span><br><span class="line">调用 isBadVersion(3) -&gt; false </span><br><span class="line">调用 isBadVersion(5) -&gt; true </span><br><span class="line">调用 isBadVersion(4) -&gt; true</span><br><span class="line">所以，4 是第一个错误的版本</span><br></pre></td></tr></table></figure></div>
 
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">var solution = function(isBadVersion) &#123;</span><br><span class="line">    return function(n) &#123;</span><br><span class="line">        let left = 0, right = n + 1;</span><br><span class="line"></span><br><span class="line">        while (left + 1 !== right) &#123;</span><br><span class="line">            const mid = left + ~~((right - left) / 2)</span><br><span class="line">            if(isBadVersion(mid)) &#123;</span><br><span class="line">                right = mid</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                left = mid</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return right</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>]]></content>
+<p>```<br>var solution = function(isBadVersion) {<br>    return function(n) {<br>        let left = 0, right = n + 1;</p>
+<pre><code>    while (left + 1 !== right) &#123;
+        const mid = left + ~~((right - left) / 2)
+        if(isBadVersion(mid)) &#123;
+            right = mid
+        &#125; else &#123;
+            left = mid
+        &#125;
+    &#125;
+    return right
+&#125;;
+</code></pre>
+<p>};<br>``` –&gt;</p>
+]]></content>
       <categories>
         <category>coding</category>
       </categories>
@@ -47,26 +66,36 @@
   <entry>
     <title>明明1句话就能理解「闭包」</title>
     <url>/2017/12/28/closer/</url>
-    <content><![CDATA[<h2 id="讲人话"><a href="#讲人话" class="headerlink" title="讲人话:"></a>讲人话:</h2><p><strong>「 一个函数 + 这个函数的外部环境   =   闭包 」</strong></p>
-<p>所以，这类看似不负责的说法都是正确的：</p>
-<blockquote>
-<p>一个函数就是一个闭包</p>
-</blockquote>
-<blockquote>
-<p>A clouser is nothing but a function with scope.</p>
-</blockquote>
-<blockquote>
-<p>A Closure is nothing but a function inside a function.</p>
-</blockquote>
-<p>我感觉闭包已经讲完了，但是这样你们肯定想揍我。</p>
-<h2 id="讲专业"><a href="#讲专业" class="headerlink" title="讲专业:"></a>讲专业:</h2><h3 id="先瞅瞅wiki"><a href="#先瞅瞅wiki" class="headerlink" title="先瞅瞅wiki"></a>先瞅瞅wiki</h3><blockquote>
-<p>In programming languages, a closure, also lexical closure or function closure, is a technique for implementing lexically scoped name binding in a language with first-class functions. Operationally, a closure is a record storing a function together with an environment. The environment is a mapping associating each free variable of the function (variables that are used locally, but defined in an enclosing scope) with the value or reference to which the name was bound when the closure was created. Unlike a plain function, a closure allows the function to access those captured variables through the closure’s copies of their values or references, even when the function is invoked outside their scope.</p>
-</blockquote>
-<p>大概意思是：闭包（也称为词汇闭包或函数闭包）是一种在具有一级函数的语言中实现词汇范围名称绑定的技术。从操作上讲，闭包是一个记录，它将一个函数与一个环境一起存储。 环境是一种映射，将函数的每个自由变量（本地使用但在封闭范围内定义的变量）与创建闭包时名称绑定到的值或引用相关联。 与普通函数不同，闭包允许函数通过闭包的值或引用副本访问这些捕获的变量，即使函数在其作用域之外被调用。</p>
-<h3 id="再瞅瞅MDN对JavaScript中闭包的描述"><a href="#再瞅瞅MDN对JavaScript中闭包的描述" class="headerlink" title="再瞅瞅MDN对JavaScript中闭包的描述"></a>再瞅瞅MDN对JavaScript中闭包的描述</h3><blockquote>
-<p>一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。也就是说，闭包让你可以在一个内层函数中访问到其外层函数的作用域。在 JavaScript 中，每当创建一个函数，闭包就会在函数创建的同时被创建出来。</p>
-</blockquote>
-<h3 id="我来总结："><a href="#我来总结：" class="headerlink" title="我来总结："></a>我来总结：</h3><p>我觉得MDN说的好。</p>
+    <content><![CDATA[<!-- 
+## 讲人话:
+
+**「 一个函数 + 这个函数的外部环境   =   闭包 」**
+
+所以，这类看似不负责的说法都是正确的：
+
+> 一个函数就是一个闭包
+
+> A clouser is nothing but a function with scope.
+
+> A Closure is nothing but a function inside a function.
+
+我感觉闭包已经讲完了，但是这样你们肯定想揍我。
+
+## 讲专业:
+
+### 先瞅瞅wiki
+> In programming languages, a closure, also lexical closure or function closure, is a technique for implementing lexically scoped name binding in a language with first-class functions. Operationally, a closure is a record storing a function together with an environment. The environment is a mapping associating each free variable of the function (variables that are used locally, but defined in an enclosing scope) with the value or reference to which the name was bound when the closure was created. Unlike a plain function, a closure allows the function to access those captured variables through the closure's copies of their values or references, even when the function is invoked outside their scope.
+
+大概意思是：闭包（也称为词汇闭包或函数闭包）是一种在具有一级函数的语言中实现词汇范围名称绑定的技术。从操作上讲，闭包是一个记录，它将一个函数与一个环境一起存储。 环境是一种映射，将函数的每个自由变量（本地使用但在封闭范围内定义的变量）与创建闭包时名称绑定到的值或引用相关联。 与普通函数不同，闭包允许函数通过闭包的值或引用副本访问这些捕获的变量，即使函数在其作用域之外被调用。
+
+### 再瞅瞅MDN对JavaScript中闭包的描述
+> 一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。也就是说，闭包让你可以在一个内层函数中访问到其外层函数的作用域。在 JavaScript 中，每当创建一个函数，闭包就会在函数创建的同时被创建出来。
+
+### 我来总结：
+
+我觉得MDN说的好。 -->
+
+
 ]]></content>
       <categories>
         <category>coding</category>
@@ -80,8 +109,12 @@
   <entry>
     <title>我读《悉达多》</title>
     <url>/2023/02/13/xidaduo/</url>
-    <content><![CDATA[<h2 id="曾找过”自我“吗"><a href="#曾找过”自我“吗" class="headerlink" title="曾找过”自我“吗"></a>曾找过”自我“吗</h2><p>看过一个对自我比较有意思且精辟的描述，自我是找不到的，你去撞墙，弹回来了，你就找到了自我。</p>
-<p>悉达多的寻找自我之路，似乎有异曲同工之妙。</p>
+    <content><![CDATA[<!-- 
+## 曾找过”自我“吗
+
+看过一个对自我比较有意思且精辟的描述，自我是找不到的，你去撞墙，弹回来了，你就找到了自我。
+
+悉达多的寻找自我之路，似乎有异曲同工之妙。 -->
 ]]></content>
       <tags>
         <tag>读书</tag>
