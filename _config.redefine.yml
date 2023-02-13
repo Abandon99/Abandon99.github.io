@@ -63,7 +63,7 @@ style:
 # Social contact link
 # ---------------------------------------------------------------------------------------
 social_contact: # social contact icons in the first screen, you can add more by using fontawesome icon names
-  enable: true 
+  enable: false 
   links:
     github:  # your GitHub URL
     instagram: # your Instagram URL
@@ -76,27 +76,29 @@ social_contact: # social contact icons in the first screen, you can add more by 
 # Navigation menu
 # ---------------------------------------------------------------------------------------
 menu: #you can customize, i18n files are in the theme's languages folder. fa-regular recommended
-  Home: 
-    path: / 
-    icon: fa-regular fa-house # can be empty
-  # Archives: 
-  #   path: /archives 
-  #   icon: fa-regular fa-archive # can be empty
-  # Status: 
-  #   path: https://status.evanluo.top/
-  #   icon: fa-regular fa-chart-bar
-  About: 
+  # HOME: 
+  #   path: / 
+  #   icon: fa-regular fa-house # can be empty
+  # # Archives: 
+  # #   path: /archives 
+  # #   icon: fa-regular fa-archive # can be empty
+  # # Status: 
+  # #   path: https://status.evanluo.top/
+  # #   icon: fa-regular fa-chart-bar
+  标签:
+    path: /tags
+    # icon: fa-regular fa-user
+  分类:
+    path: /categories
+    # icon: fa-regular fa-user
+  关于我: 
     path: /about
-    icon: fa-regular fa-user
+    # icon: fa-regular fa-user
     submenus:
       Me: /about
       Github: https://github.com/EvanNotFound/hexo-theme-redefine
       Blog: https://www.evanluo.top
       Friends: /friends
-  Tags:
-    path: /tags
-    icon: fa-regular fa-user
-
   # Links: 
   #   icon: fa-regular fa-link
   #   submenus:
@@ -134,10 +136,10 @@ post:
 
   # Author label
   author_label:
-    enable: true
+    enable: false
     auto: false # if true, show Lv1, Lv2, Lv3... , If false, show custom label
     # label array item can be one or more
-    custom_label_list: ["lol"]
+    # custom_label_list: ["lol"]
 
 # ---------------------------------------------------------------------------------------
 # Code copy
@@ -165,7 +167,7 @@ toc:
 # Post copyright info
 # ---------------------------------------------------------------------------------------
 copyright_info:
-  enable: true
+  enable: false
 
 # ---------------------------------------------------------------------------------------
 # Website count
@@ -246,7 +248,7 @@ cdn:
 # PJAX
 # ---------------------------------------------------------------------------------------
 pjax:
-  enable: true
+  enable: false
 
 # ---------------------------------------------------------------------------------------
 # Fontawesome
@@ -262,8 +264,8 @@ fontawesome: # select fontawesome versions you want to use, in order to reduce t
 footer:
   runtime: true # show website running time or not
   start_time: 2022/8/17 11:45:14 # the starting time of your website, format: yyyy/mm/dd hh:mm:ss
-  customize:  # customize footer message, can be html code
-  icp: # ICP record number of your website, Can be null
+  customize:  <a href="https://beian.miit.gov.cn/">京ICP备2022003741号-1</a>
+  # icp: <a href="https://beian.miit.gov.cn/">京ICP备2022003741号-1</a>
 
 # ---------------------------------------------------------------------------------------
 # Custom html code
