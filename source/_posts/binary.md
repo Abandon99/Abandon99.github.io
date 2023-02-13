@@ -8,7 +8,7 @@ categories:
 - coding 
 ---
 
-
+<!-- 
 ## 二分法适用：
 - 有序数组
 - 找值
@@ -126,4 +126,4 @@ var solution = function(isBadVersion) {
         return right
     };
 };
-```
+``` -->
